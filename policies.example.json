@@ -1,0 +1,140 @@
+{
+  "policy_version": "demo-1.0",
+  "artifact_kind": "illustrative_reference_configuration",
+  "defaults": {
+    "unknown_scope": "deny",
+    "unknown_field": "block_export",
+    "invalid_policy": "deny",
+    "mixed_unauthorized_country_request": "reject_entire_request"
+  },
+  "datasets": {
+    "employees_demo": {
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ]
+    }
+  },
+  "teams": {
+    "operations": {
+      "allowed_roles": [
+        "operations_analyst"
+      ],
+      "allowed_countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work"
+      ],
+      "deny_fields": [
+        "annual_salary",
+        "annual_bonus",
+        "currency"
+      ]
+    },
+    "finance": {
+      "allowed_roles": [
+        "finance_analyst"
+      ],
+      "allowed_countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ],
+      "deny_fields": []
+    },
+    "partner": {
+      "allowed_roles": [
+        "partner_developer"
+      ],
+      "allowed_countries": [
+        "Aster"
+      ],
+      "allowed_categories": [
+        "structural",
+        "work"
+      ],
+      "deny_fields": [
+        "display_name",
+        "annual_salary",
+        "annual_bonus",
+        "currency"
+      ]
+    }
+  },
+  "roles": {
+    "operations_analyst": {
+      "allowed_countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work"
+      ]
+    },
+    "finance_analyst": {
+      "allowed_countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ]
+    },
+    "partner_developer": {
+      "allowed_countries": [
+        "Aster"
+      ],
+      "allowed_categories": [
+        "structural",
+        "work"
+      ]
+    }
+  },
+  "countries": {
+    "Aster": {
+      "fictional": true,
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ],
+      "deny_fields": []
+    },
+    "Boreal": {
+      "fictional": true,
+      "allowed_categories": [
+        "structural",
+        "identity",
+        "work"
+      ],
+      "deny_fields": [
+        "annual_salary",
+        "annual_bonus",
+        "currency"
+      ]
+    }
+  },
+  "generation": {
+    "data_kind": "synthetic_only",
+    "copy_source_values": false,
+    "identifier_scope": "recipient_package",
+    "country_partitioning": "when_output_schemas_differ"
+  }
+}

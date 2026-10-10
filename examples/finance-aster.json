@@ -1,0 +1,22 @@
+[
+  {
+    "employee_id": "fin-as-0001",
+    "country": "Aster",
+    "display_name": "Morgan Example",
+    "department": "Operations",
+    "job_family": "Analyst",
+    "annual_salary": 54000,
+    "annual_bonus": 4000,
+    "currency": "DEM"
+  },
+  {
+    "employee_id": "fin-as-0002",
+    "country": "Aster",
+    "display_name": "Casey Example",
+    "department": "Engineering",
+    "job_family": "Engineer",
+    "annual_salary": 72000,
+    "annual_bonus": 6000,
+    "currency": "DEM"
+  }
+]

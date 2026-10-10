@@ -1,0 +1,147 @@
+{
+  "artifact_kind": "illustrative_expected_decisions",
+  "policy_version": "demo-1.0",
+  "cases": [
+    {
+      "id": "operations_both",
+      "team": "operations",
+      "role": "operations_analyst",
+      "countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "decision": "permit",
+      "fields_by_country": {
+        "Aster": [
+          "employee_id",
+          "country",
+          "display_name",
+          "department",
+          "job_family"
+        ],
+        "Boreal": [
+          "employee_id",
+          "country",
+          "display_name",
+          "department",
+          "job_family"
+        ]
+      }
+    },
+    {
+      "id": "finance_aster",
+      "team": "finance",
+      "role": "finance_analyst",
+      "countries": [
+        "Aster"
+      ],
+      "decision": "permit",
+      "fields_by_country": {
+        "Aster": [
+          "employee_id",
+          "country",
+          "display_name",
+          "department",
+          "job_family",
+          "annual_salary",
+          "annual_bonus",
+          "currency"
+        ]
+      }
+    },
+    {
+      "id": "finance_boreal",
+      "team": "finance",
+      "role": "finance_analyst",
+      "countries": [
+        "Boreal"
+      ],
+      "decision": "permit",
+      "fields_by_country": {
+        "Boreal": [
+          "employee_id",
+          "country",
+          "display_name",
+          "department",
+          "job_family"
+        ]
+      }
+    },
+    {
+      "id": "partner_aster",
+      "team": "partner",
+      "role": "partner_developer",
+      "countries": [
+        "Aster"
+      ],
+      "decision": "permit",
+      "fields_by_country": {
+        "Aster": [
+          "employee_id",
+          "country",
+          "department",
+          "job_family"
+        ]
+      }
+    },
+    {
+      "id": "partner_boreal",
+      "team": "partner",
+      "role": "partner_developer",
+      "countries": [
+        "Boreal"
+      ],
+      "decision": "deny",
+      "reason": "country_out_of_scope"
+    },
+    {
+      "id": "partner_mixed",
+      "team": "partner",
+      "role": "partner_developer",
+      "countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "decision": "deny",
+      "reason": "country_out_of_scope"
+    },
+    {
+      "id": "unknown_team",
+      "team": "unknown",
+      "role": "operations_analyst",
+      "countries": [
+        "Aster"
+      ],
+      "decision": "deny",
+      "reason": "unknown_team"
+    },
+    {
+      "id": "wrong_role",
+      "team": "operations",
+      "role": "finance_analyst",
+      "countries": [
+        "Aster"
+      ],
+      "decision": "deny",
+      "reason": "role_not_assigned_to_team"
+    },
+    {
+      "id": "unknown_country",
+      "team": "operations",
+      "role": "operations_analyst",
+      "countries": [
+        "Unknown"
+      ],
+      "decision": "deny",
+      "reason": "unknown_country"
+    },
+    {
+      "id": "empty_country_scope",
+      "team": "operations",
+      "role": "operations_analyst",
+      "countries": [],
+      "decision": "deny",
+      "reason": "empty_country_scope"
+    }
+  ]
+}

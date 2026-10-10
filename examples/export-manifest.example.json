@@ -1,0 +1,29 @@
+{
+  "artifact_kind": "illustrative_export_manifest",
+  "data_kind": "synthetic",
+  "validation_status": "illustrative_not_execution_evidence",
+  "export_id": "demo-export-0001",
+  "policy_version": "demo-1.0",
+  "dataset": "employees_demo",
+  "contract_version": "1.0",
+  "recipient": {
+    "team": "finance",
+    "role": "finance_analyst"
+  },
+  "countries": [
+    "Aster"
+  ],
+  "fields": [
+    "employee_id",
+    "country",
+    "display_name",
+    "department",
+    "job_family",
+    "annual_salary",
+    "annual_bonus",
+    "currency"
+  ],
+  "row_count": 2,
+  "contains_source_rows": false,
+  "contains_source_identifiers": false
+}

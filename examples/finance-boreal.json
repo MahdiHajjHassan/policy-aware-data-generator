@@ -1,0 +1,9 @@
+[
+  {
+    "employee_id": "fin-bo-0001",
+    "country": "Boreal",
+    "display_name": "Taylor Example",
+    "department": "Finance",
+    "job_family": "Coordinator"
+  }
+]

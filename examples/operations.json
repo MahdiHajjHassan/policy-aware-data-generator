@@ -1,0 +1,16 @@
+[
+  {
+    "employee_id": "ops-0001",
+    "country": "Aster",
+    "display_name": "Alex Example",
+    "department": "Operations",
+    "job_family": "Analyst"
+  },
+  {
+    "employee_id": "ops-0002",
+    "country": "Boreal",
+    "display_name": "Jamie Example",
+    "department": "Engineering",
+    "job_family": "Engineer"
+  }
+]

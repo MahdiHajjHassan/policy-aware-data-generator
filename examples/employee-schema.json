@@ -1,0 +1,73 @@
+{
+  "dataset": "employees_demo",
+  "contract_version": "1.0",
+  "data_kind": "fictional_schema",
+  "primary_key": [
+    "employee_id"
+  ],
+  "fields": {
+    "employee_id": {
+      "type": "string",
+      "category": "structural",
+      "required": true,
+      "synthetic": true
+    },
+    "country": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "enum": [
+        "Aster",
+        "Boreal"
+      ]
+    },
+    "display_name": {
+      "type": "string",
+      "category": "identity",
+      "required": false,
+      "synthetic": true
+    },
+    "department": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "enum": [
+        "Operations",
+        "Engineering",
+        "Finance"
+      ]
+    },
+    "job_family": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "enum": [
+        "Analyst",
+        "Engineer",
+        "Coordinator"
+      ]
+    },
+    "annual_salary": {
+      "type": "number",
+      "category": "financial",
+      "required": false,
+      "minimum": 0,
+      "synthetic": true
+    },
+    "annual_bonus": {
+      "type": "number",
+      "category": "financial",
+      "required": false,
+      "minimum": 0,
+      "synthetic": true
+    },
+    "currency": {
+      "type": "string",
+      "category": "financial",
+      "required": false,
+      "enum": [
+        "DEM"
+      ]
+    }
+  }
+}

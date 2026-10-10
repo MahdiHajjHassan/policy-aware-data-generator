@@ -1,26 +1,50 @@
 # Policy-Aware Synthetic Data Generator
 
-**Recipient-specific development datasets shaped by team, role, and country rules.**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/cover-dark.svg">
+  <img src="assets/cover-light.svg" alt="Useful data. Right-sized access. Team, role and country rules." width="100%">
+</picture>
 
-A data platform can serve many teams without giving every team the same view of the information. Operations may need employee assignments while finance needs compensation fields. A partner development team may need a much smaller subset. Country rules can further narrow each recipient's scope.
+**Useful development data, shaped for the team receiving it.**
 
-I developed a configurable synthetic data generator to support this kind of development-data distribution. This repository presents a public case study and an expanded reference design using entirely fictional examples.
+Operations, finance, and partner teams often need different views of the same information. This project explores how to provide realistic synthetic data while respecting each recipient's role, team, and country scope.
 
-> **Repository status:** Documentation-only case study. The original source implementation is not included. Configurations and output fixtures are illustrative reference examples; they are not execution results or proof of production controls.
+[Reference design](docs/reference-design.md) · [Example outputs](examples) · [My portfolio](https://github.com/MahdiHajjHassan)
 
-## The business problem
+## Why it matters
 
-Teams need realistic development data to build integrations, dashboards, and workflows. Sharing one unrestricted dataset makes it easy to expose fields that a recipient has no reason to receive. Removing all structure, on the other hand, makes the data less useful for development.
+Teams need realistic data to build integrations, dashboards, and workflows. A single unrestricted dataset can reveal fields that a recipient does not need. An empty or oversimplified dataset makes development harder.
 
-The goal is to give each team useful synthetic datasets that reflect its permitted view: appropriate fields, country scope, data types, and relationships.
+The goal is a useful middle ground: preserve the structure needed for development and generate only the synthetic fields the recipient is permitted to receive.
 
-This applies beyond HR. The same pattern can support operational, customer, inventory, or other datasets once their fields and access rules have been explicitly classified.
+## What I built
 
-## My contribution
+I developed a configurable dummy-data generator for recipients with different access requirements. Data could arrive through an API or a file; recipient configuration shaped the development dataset.
 
-The original work focused on configuration-driven generation of dummy data for recipients with different access requirements. Inputs could arrive through APIs or files, and the recipient configuration determined the scope of the development dataset.
+This public showcase explains the approach using fictional people, countries, and records. It applies beyond HR wherever fields and recipient permissions can be explicitly classified.
 
-The public reference below explains that approach through a concrete example. Its additional validation, audit, and failure-handling controls are documented design recommendations rather than claims about features verified in the original implementation.
+## One source, different views
+
+| Recipient | Useful development view | Fields left out |
+| --- | --- | --- |
+| Operations team | Assignments, departments, and job information | Salary, bonus, and financial fields |
+| Finance team in Aster | Workforce and fabricated financial information | Fields outside the declared policy |
+| Finance team in Boreal | Workforce information allowed by country rules | Financial fields restricted by that country policy |
+| Partner developer | A limited operational subset for Aster | Identity and financial fields |
+
+Aster and Boreal are fictional countries. Their rules illustrate configuration behavior, not real legal requirements. Country restrictions narrow team permissions rather than being overridden by them.
+
+## Explore the evidence
+
+- **[Policy configuration](policies.example.json):** how team, role, country, and field-category rules are represented.
+- **[Synthetic fixtures](examples):** what different recipient views look like.
+- **[Acceptance scenarios](docs/acceptance-scenarios.md):** expected allowed and denied outcomes.
+- **[Reference design](docs/reference-design.md):** policy precedence, validation, failure handling, and audit recommendations.
+
+**Repository scope:** public case study and reference design. The original source implementation is not included. Configurations and fixtures are illustrative; the additional validation and audit controls are design recommendations rather than verified production features.
+
+<details>
+<summary><strong>Technical examples, workflow, and design controls</strong></summary>
 
 ## A concrete example
 
@@ -142,3 +166,5 @@ All people, team labels, countries, field examples, amounts, and configurations 
 Country rules are fictional configuration examples. An implementation must also prevent copied source values, source-derived identifiers, and unintended disclosure through logs or data profiling.
 
 **Author:** [Mahdi Hajj Hassan](https://github.com/MahdiHajjHassan)
+
+</details>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="288" viewBox="0 0 680 288" role="img" aria-labelledby="policy-title policy-description">
+  <title id="policy-title">One schema, different permitted views</title>
+  <desc id="policy-description">Fictional concept: recipient scope and field rules shape operations and Aster finance development datasets. Not a runnable generator or screenshot.</desc>
+  <style>text{font-family:Segoe UI,Arial,sans-serif;font-size:27px;font-weight:500;fill:#f1ece2}.small{font-size:23px;font-weight:400}.paper{fill:#202c34;stroke:#3c4b54;stroke-width:1.5}.flow{stroke:#e3a06c;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}.rule{stroke:#3c4b54;stroke-width:2;fill:none}</style>
+  <rect width="680" height="288" rx="14" fill="#171f26"/>
+
+  <text x="28" y="44">One schema.</text>
+  <text x="244" y="44">Recipient rules.</text>
+  <text x="480" y="44">Different views.</text>
+  <rect x="28" y="70" width="167" height="166" rx="10" class="paper"/>
+  <text class="small" x="44" y="111">Work</text>
+  <text class="small" x="44" y="157">Identity</text>
+  <text class="small" x="44" y="203">Finance</text>
+  <path d="M44 120H174 M44 166H174" class="rule"/>
+  <rect x="244" y="91" width="193" height="132" rx="10" class="paper"/>
+  <text class="small" x="262" y="130">Country scope</text>
+  <text class="small" x="262" y="175">Field rules</text>
+  <rect x="262" y="193" width="154" height="8" rx="4" fill="#e3a06c"/>
+  <rect x="480" y="70" width="172" height="74" rx="10" class="paper"/>
+  <rect x="480" y="163" width="172" height="74" rx="10" class="paper"/>
+  <text class="small" x="497" y="100">Operations</text>
+  <text class="small" x="497" y="130">Work fields</text>
+  <text class="small" x="497" y="193">Aster finance</text>
+  <text class="small" x="497" y="224">Work + pay</text>
+  <path d="M207 156H231 M224 150L231 156L224 162 M445 156H468 M461 150L468 156L461 162" class="flow"/>
+</svg>

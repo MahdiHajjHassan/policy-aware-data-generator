@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="304" viewBox="0 0 320 304" role="img" aria-labelledby="policy-title policy-description">
+  <title id="policy-title">One schema, different permitted views</title>
+  <desc id="policy-description">Fictional concept: recipient scope and field rules shape operations and Aster finance development datasets. Not a runnable generator or screenshot.</desc>
+  <style>text{font-family:Segoe UI,Arial,sans-serif;font-size:26px;font-weight:500;fill:#f1ece2}.small{font-size:21px;font-weight:400}.paper{fill:#202c34;stroke:#3c4b54;stroke-width:1.5}.flow{stroke:#e3a06c;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}.rule{stroke:#3c4b54;stroke-width:2;fill:none}</style>
+  <rect width="320" height="304" rx="14" fill="#171f26"/>
+
+  <rect x="16" y="15" width="288" height="72" rx="10" class="paper"/>
+  <text x="32" y="47">One schema.</text>
+  <text class="small" x="32" y="75">Work · Identity · Finance</text>
+  <rect x="16" y="108" width="288" height="72" rx="10" class="paper"/>
+  <text x="32" y="140">Recipient rules.</text>
+  <text class="small" x="32" y="167">Country + permitted fields</text>
+  <rect x="16" y="201" width="288" height="83" rx="10" class="paper"/>
+  <text class="small" x="32" y="232">Operations: work fields</text>
+  <text class="small" x="32" y="266">Aster finance: + pay</text>
+  <path d="M160 91V103 M155 98L160 103L165 98 M160 184V196 M155 191L160 196L165 191" class="flow"/>
+</svg>

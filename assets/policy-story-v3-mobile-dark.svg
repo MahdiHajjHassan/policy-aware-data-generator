@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="572" viewBox="0 0 360 572" role="img" aria-labelledby="policyTitle policyDesc" data-model="permission-matrix-and-output-schemas" data-variant="mobile" data-version="v3">
+<title id="policyTitle">Recipient and country rules shape the permitted dataset</title>
+<desc id="policyDesc">Recipient and country permissions determine the output columns. Operations in Aster omit pay fields, Finance in Aster include them, and Finance in Boreal omit them.</desc>
+<style>text{font-family:Segoe UI,Arial,sans-serif}path,rect,circle,ellipse{shape-rendering:geometricPrecision}</style>
+<rect x="0" y="0" width="360" height="572" rx="18" fill="#171f26" stroke="none" stroke-width="1.5"/>
+<text x="24" y="29" font-size="16" font-weight="600" fill="#c9ace9" text-anchor="start">POLICYFORGE / RECIPIENT-AWARE DATA</text>
+<text x="24" y="66" font-size="27" font-weight="600" fill="#f1ece2" text-anchor="start">Permissions change</text>
+<text x="24" y="102" font-size="27" font-weight="600" fill="#f1ece2" text-anchor="start">the dataset&#x27;s shape.</text>
+<text x="24" y="135" font-size="18" font-weight="600" fill="#f1ece2" text-anchor="start">Recipient</text>
+<text x="193" y="135" font-size="18" font-weight="600" fill="#f1ece2" text-anchor="middle">Work</text>
+<text x="251" y="135" font-size="18" font-weight="600" fill="#f1ece2" text-anchor="middle">ID</text>
+<text x="311" y="135" font-size="18" font-weight="600" fill="#f1ece2" text-anchor="middle">Pay</text>
+<rect x="22" y="153" width="316" height="58" rx="6" fill="#202c34" stroke="none" stroke-width="1.5"/>
+<text x="36" y="178" font-size="20" font-weight="600" fill="#f1ece2" text-anchor="start">Ops</text>
+<text x="36" y="204" font-size="18" font-weight="400" fill="#c0cbd0" text-anchor="start">Aster</text>
+<circle cx="193" cy="182" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M189 182L192 185L198 178" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="251" cy="182" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M247 182L250 185L256 178" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="311" cy="182" r="10" fill="#29363e" stroke="#3c4b54" stroke-width="1.5"/>
+<path d="M307 182H315" fill="none" stroke="#c0cbd0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="22" y="219" width="316" height="58" rx="6" fill="#3a3048" stroke="none" stroke-width="1.5"/>
+<text x="36" y="244" font-size="20" font-weight="600" fill="#f1ece2" text-anchor="start">Finance</text>
+<text x="36" y="270" font-size="18" font-weight="400" fill="#c0cbd0" text-anchor="start">Aster</text>
+<circle cx="193" cy="248" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M189 248L192 251L198 244" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="251" cy="248" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M247 248L250 251L256 244" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="311" cy="248" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M307 248L310 251L316 244" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="22" y="285" width="316" height="58" rx="6" fill="#202c34" stroke="none" stroke-width="1.5"/>
+<text x="36" y="310" font-size="20" font-weight="600" fill="#f1ece2" text-anchor="start">Finance</text>
+<text x="36" y="336" font-size="18" font-weight="400" fill="#c0cbd0" text-anchor="start">Boreal</text>
+<circle cx="193" cy="314" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M189 314L192 317L198 310" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="251" cy="314" r="10" fill="#3a3048" stroke="#c9ace9" stroke-width="1.5"/>
+<path d="M247 314L250 317L256 310" fill="none" stroke="#c9ace9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="311" cy="314" r="10" fill="#29363e" stroke="#3c4b54" stroke-width="1.5"/>
+<path d="M307 314H315" fill="none" stroke="#c0cbd0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="24" y="383" font-size="20" font-weight="600" fill="#f1ece2" text-anchor="start">Only permitted columns survive.</text>
+<text x="24" y="416" font-size="19" font-weight="400" fill="#f1ece2" text-anchor="start">Operations / Aster</text>
+<rect x="24" y="430" width="127" height="33" rx="5" fill="#3a3048" stroke="none" stroke-width="1.5"/>
+<rect x="161" y="430" width="105" height="33" rx="5" fill="#3a3048" stroke="none" stroke-width="1.5"/>
+<text x="38" y="453" font-size="19" font-weight="400" fill="#f1ece2" text-anchor="start">Work fields</text>
+<text x="177" y="453" font-size="19" font-weight="400" fill="#f1ece2" text-anchor="start">Identity</text>
+<text x="24" y="496" font-size="20" font-weight="600" fill="#c9ace9" text-anchor="start">Pay columns are absent.</text>
+<path d="M24 506H336" fill="none" stroke="#3c4b54" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="24" y="528" font-size="18" font-weight="400" fill="#c0cbd0" text-anchor="start">Country access is checked first.</text>
+<text x="24" y="552" font-size="18" font-weight="400" fill="#c0cbd0" text-anchor="start">Each recipient gets permitted fields.</text>
+</svg>

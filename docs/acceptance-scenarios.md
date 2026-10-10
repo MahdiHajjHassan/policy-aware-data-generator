@@ -1,10 +1,10 @@
 # Acceptance Scenarios
 
 > [!CAUTION]
-> **Independent portfolio demo: no Thales implementation or data.**
-> This showcase uses fictional data and generic reference designs to explain engineering ideas from my professional experience. It does not reproduce, document, or disclose Thales's actual systems, architecture, configuration, or critical data. It is not an official Thales project or endorsement.
+> **Professional experience, protected information.**
+> This public showcase uses independent reference designs and fictional examples, with no Thales implementation or data. It discloses no employer code, systems, configuration, or critical information and carries no official endorsement. Diagrams explain the design; they are illustrations, not application screenshots or execution results. PolicyForge publishes a design and static fixtures; the original generator is unavailable. Expanded delivery controls are design recommendations, not verified features of that implementation. Example policies are not legal requirements.
 
-These scenarios describe reference expectations. They are not runtime test results.
+The acceptance matrix covers permitted views, explicit refusals, schema changes, and delivery boundaries.
 
 | Scenario | Expected result |
 | --- | --- |
@@ -30,7 +30,7 @@ These scenarios describe reference expectations. They are not runtime test resul
 
 ## Reading the fixtures
 
-The JSON files contain fabricated example records written for this public case study. They illustrate output shape, not execution of a generator.
+The JSON files show the output fields for each recipient and country.
 
 - Operations has structural, identity, and work fields.
 - Aster finance additionally has annual_salary, annual_bonus, and currency.
@@ -41,5 +41,3 @@ The JSON files contain fabricated example records written for this public case s
 ## Implementation verification requirements
 
 An executable reconstruction should test the policy matrix, schema changes, untrusted recipient context, invalid inputs, field omission, country restrictions, record relationships, output validation failures, retries, and delivery isolation.
-
-Do not mark those implementation checks as passed merely because the static example files are consistent.

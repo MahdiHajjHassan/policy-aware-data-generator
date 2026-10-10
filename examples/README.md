@@ -1,9 +1,9 @@
-# Fictional example fixtures
+# Recipient-specific examples
 
 > [!CAUTION]
-> **Independent portfolio demo: no Thales implementation or data.**
-> This showcase uses fictional data and generic reference designs to explain engineering ideas from my professional experience. It does not reproduce, document, or disclose Thales's actual systems, architecture, configuration, or critical data. It is not an official Thales project or endorsement.
+> **Professional experience, protected information.**
+> This public showcase uses independent reference designs and fictional examples, with no Thales implementation or data. It discloses no employer code, systems, configuration, or critical information and carries no official endorsement. Diagrams explain the design; they are illustrations, not application screenshots or execution results. PolicyForge publishes a design and static fixtures; the original generator is unavailable. Expanded delivery controls are design recommendations, not verified features of that implementation. Example policies are not legal requirements.
 
-Every schema, policy, country, identifier, name, and value in this directory is fabricated for this public reference design. These files are static illustrations, not records from an employer or output from a runnable generator. Aster and Boreal are fictional countries.
+These examples connect an employee schema and recipient policy to four output shapes: operations, Aster finance, Boreal finance, and an Aster partner. Compare the field lists to see how role and country scope shape each dataset.
 
 [Project overview](../README.md) · [Acceptance scenarios](../docs/acceptance-scenarios.md)

@@ -1,10 +1,10 @@
 # Reference Design
 
 > [!CAUTION]
-> **Independent portfolio demo: no Thales implementation or data.**
-> This showcase uses fictional data and generic reference designs to explain engineering ideas from my professional experience. It does not reproduce, document, or disclose Thales's actual systems, architecture, configuration, or critical data. It is not an official Thales project or endorsement.
+> **Professional experience, protected information.**
+> This public showcase uses independent reference designs and fictional examples, with no Thales implementation or data. It discloses no employer code, systems, configuration, or critical information and carries no official endorsement. Diagrams explain the design; they are illustrations, not application screenshots or execution results. PolicyForge publishes a design and static fixtures; the original generator is unavailable. Expanded delivery controls are design recommendations, not verified features of that implementation. Example policies are not legal requirements.
 
-I documented this public reference design to explain the original project concept. It defines the policy, generation, and delivery contracts without asserting that every reference control existed or was tested in the original tool.
+The design connects input contracts, recipient permissions, synthetic generation, validation, and delivery.
 
 ## Input contracts
 
@@ -52,7 +52,7 @@ The requested countries must be a nonempty subset of both the team's and the rol
 
 An export requesting a mixture of permitted and forbidden countries is rejected as a whole. The caller must submit an explicitly narrower request; the engine does not silently produce a partial export.
 
-After country validation, separate country partitions can have different field lists. Aster finance includes financial fields; Boreal finance omits them. Both remain successful authorized requests under this fictional policy.
+After country validation, separate country partitions can have different field lists. Aster finance includes financial fields; Boreal finance omits them. Both remain successful authorized requests under this policy.
 
 A required field that is prohibited by an explicit denial or category restriction makes the export invalid. The generator must not silently retain the field or release a broken dataset.
 
@@ -78,7 +78,7 @@ The permitted output field list is compiled before records are generated.
 - Parent-child records use the same synthetic mapping within one recipient package.
 - Separate recipients get independently generated identifiers and records.
 
-The illustration deliberately uses a fictional currency marker and fabricated example names. Amounts are fixed examples, not modelled from a real payroll distribution.
+Generation constraints define the names, currency markers, and financial ranges used by the dataset.
 
 A development seed makes fixture output reproducible for a fixed contract, policy, and generation configuration. It must not include original identifiers, sensitive values, or secrets. Reproducibility does not itself establish anonymity.
 
@@ -101,7 +101,7 @@ For related datasets such as employees and assignments:
 - An excluded parent cannot remain discoverable through a child record.
 - If a required relationship cannot be represented within the permitted scope, the export is rejected or an explicitly documented alternative contract is required.
 
-The employee-only fixtures in this repository do not demonstrate implemented multi-table generation. Relationship handling is part of the expanded reference design.
+The relationship contract extends the employee dataset to related tables while preserving each recipient's scope.
 
 ## Export validation
 
@@ -118,7 +118,7 @@ Before publication, an implementation should verify:
 9. Unknown fields and scopes produce explicit rejections.
 10. Export manifests and logs contain no source values.
 
-These are acceptance requirements; the public fixtures are static illustrations.
+These requirements define the export acceptance boundary.
 
 ## Failure handling
 
@@ -142,14 +142,10 @@ The reference manifest records the policy version, dataset contract version, rec
 
 Audit events can capture a generated job identifier, an opaque authenticated-subject identifier, the policy version, a decision, and an error code. Logging should avoid names, salaries, source row samples, and source identifiers.
 
-The distribution boundary requires authenticated delivery, recipient checks, isolated export storage, appropriate retention, and authorization on download. Removing fields does not replace those controls. These operational mechanisms are outside this documentation-only repository.
+The distribution boundary requires authenticated delivery, recipient checks, isolated export storage, appropriate retention, and authorization on download. Removing fields does not replace those controls.
 
 ## Domain extension
 
 A non-HR dataset follows the same policy model with its own explicit classifications. For example, a product dataset might distinguish structural identifiers, product descriptions, stock information, and cost fields.
 
-The architecture permits that extension, but this repository only supplies an employee-domain fixture set. It does not claim that additional domain adapters are implemented.
-
-## Evidence boundary
-
-The repository establishes a documented approach, a consistent policy example, and fabricated output illustrations. It does not establish throughput, deployment status, legal certification, or correctness of an unpublished original implementation.
+Each domain supplies its own schema and classifications while retaining the same recipient-policy model.

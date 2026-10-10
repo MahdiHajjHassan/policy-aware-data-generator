@@ -1,5 +1,7 @@
 # Acceptance Scenarios
 
+> **Confidentiality disclaimer:** This is a generic reference/dummy showcase of my experience, using fictional examples only. It contains no employer code, internal identifiers, schemas, or real employee data. It does not reproduce or expose the confidential implementation.
+
 These scenarios describe reference expectations. They are not runtime test results.
 
 | Scenario | Expected result |

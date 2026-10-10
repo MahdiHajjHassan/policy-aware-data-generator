@@ -6,17 +6,10 @@ This repository explains the approach with a reference design, policy configurat
 
 ## How a recipient's dataset is shaped
 
-~~~mermaid
-flowchart TD
-    Inputs["API or file: approved schema"] --> Fields["Permitted output fields"]
-    Policy["Team, role, and country rules"] --> Scope{"Requested scope permitted?"}
-    Scope -->|No| Deny["Deny the request"]
-    Scope -->|Yes| Fields
-    Fields --> Generate["Generate synthetic records"]
-    Generate --> Check{"Output matches the permitted schema?"}
-    Check -->|Yes| Export["Recipient-specific development data"]
-    Check -->|No| Reject["Reject the export"]
-~~~
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/recipient-data-dark.svg">
+  <img alt="Recipient rules allow or deny scope, select permitted fields, and reject invalid synthetic output before a recipient dataset is delivered." src="assets/recipient-data-light.svg" width="500">
+</picture>
 
 The design combines the dataset contract with recipient permissions before generating records. Restricted fields are omitted, country restrictions narrow broader permissions, and unauthorized scope is rejected. Source records are not copied into the public examples.
 

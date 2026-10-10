@@ -1,6 +1,6 @@
 # Policy-aware synthetic data generator
 
-> **Confidentiality disclaimer:** This is a generic reference/dummy showcase of my experience, using fictional examples only. It contains no employer code, internal identifiers, schemas, or real employee data. It does not reproduce or expose the confidential implementation.
+> **Confidentiality disclaimer:** This is a generic portfolio reference using fictional examples. It contains no employer code, internal identifiers, confidential schemas, real employee data, or confidential implementation details, and does not reproduce or expose the employer's implementation.
 
 I developed a configurable dummy-data generator for teams that need different views of a dataset. An operations team might need assignments and departments, while finance also needs financial fields; country rules can narrow either team's access.
 

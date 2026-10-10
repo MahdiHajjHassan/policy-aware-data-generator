@@ -1,8 +1,10 @@
 # Reference Design
 
-> **Confidentiality disclaimer:** This is a generic portfolio reference using fictional examples. It contains no employer code, internal identifiers, confidential schemas, real employee data, or confidential implementation details, and does not reproduce or expose the employer's implementation.
+> [!CAUTION]
+> **Independent portfolio demo: no Thales implementation or data.**
+> This showcase uses fictional data and generic reference designs to explain engineering ideas from my professional experience. It does not reproduce, document, or disclose Thales's actual systems, architecture, configuration, or critical data. It is not an official Thales project or endorsement.
 
-This document expands the original project concept into a public design. Behavior described here is proposed reference behavior, not a statement that every control existed or was tested in the original tool.
+I documented this public reference design to explain the original project concept. It defines the policy, generation, and delivery contracts without asserting that every reference control existed or was tested in the original tool.
 
 ## Input contracts
 
@@ -134,9 +136,9 @@ These are acceptance requirements; the public fixtures are static illustrations.
 
 No failure should produce a fallback export containing all fields.
 
-## Audit and delivery recommendations
+## Audit and delivery design
 
-A proposed manifest records the policy version, dataset contract version, recipient team and role, countries, output fields, synthetic row counts, and validation status. It does not contain input rows.
+The reference manifest records the policy version, dataset contract version, recipient team and role, countries, output fields, synthetic row counts, and validation status. It does not contain input rows.
 
 Audit events can capture a generated job identifier, an opaque authenticated-subject identifier, the policy version, a decision, and an error code. Logging should avoid names, salaries, source row samples, and source identifiers.
 

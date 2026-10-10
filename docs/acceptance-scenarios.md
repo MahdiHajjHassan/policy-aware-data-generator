@@ -1,6 +1,8 @@
 # Acceptance Scenarios
 
-> **Confidentiality disclaimer:** This is a generic portfolio reference using fictional examples. It contains no employer code, internal identifiers, confidential schemas, real employee data, or confidential implementation details, and does not reproduce or expose the employer's implementation.
+> [!CAUTION]
+> **Independent portfolio demo: no Thales implementation or data.**
+> This showcase uses fictional data and generic reference designs to explain engineering ideas from my professional experience. It does not reproduce, document, or disclose Thales's actual systems, architecture, configuration, or critical data. It is not an official Thales project or endorsement.
 
 These scenarios describe reference expectations. They are not runtime test results.
 
@@ -36,7 +38,7 @@ The JSON files contain fabricated example records written for this public case s
 - Aster partner has structural and work fields, with display_name absent.
 - Expected decisions show both approvals and denials.
 
-## Verification required for a future implementation
+## Implementation verification requirements
 
 An executable reconstruction should test the policy matrix, schema changes, untrusted recipient context, invalid inputs, field omission, country restrictions, record relationships, output validation failures, retries, and delivery isolation.
 

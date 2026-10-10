@@ -3,7 +3,7 @@
 ## Recipient-aware synthetic data
 
 > [!CAUTION]
-> **Independent portfolio demo — no Thales implementation or data.**
+> **Independent portfolio demo: no Thales implementation or data.**
 > This showcase uses fictional data and generic reference designs to explain engineering ideas from my professional experience. It does not reproduce, document, or disclose Thales's actual systems, architecture, configuration, or critical data. It is not an official Thales project or endorsement.
 
 I developed a configurable dummy-data generator for teams that needed different views of a dataset. The question behind the work is simple: **what should this recipient be able to work with?**
@@ -40,7 +40,7 @@ The existing public fixtures make those differences visible:
 
 These are separate fabricated records, not one employee copied between recipients. The names, identifiers, amounts, countries, and policies are invented for the public reference. They do not describe legal requirements.
 
-The distinction matters to the people building with the data. Finance in Boreal needs a valid view without salary columns; a partner requesting Boreal needs an explicit refusal. Those are different situations, and the reference makes each decision visible.
+The distinction matters to the development team using the data. Finance in Boreal needs a valid view without salary columns; a partner requesting Boreal needs an explicit refusal. Those are different situations, and the reference makes each decision visible.
 
 ---
 
@@ -65,9 +65,9 @@ permitted fields = declared fields in those categories − explicit denials
 Country access is checked first. Every requested country must be permitted by both the team and the role. Field categories can then narrow an authorized view; an explicit denial removes a field even when its category is allowed.
 
 - **Omit restricted fields entirely.** A forbidden column is absent from both schema and records, rather than returned as a masked string, hash, or empty value.
-- **Keep country schemas explicit.** Aster and Boreal finance have different field lists, so the reference proposes separate country partitions.
+- **Keep country schemas explicit.** Aster and Boreal finance have different field lists, so the reference defines separate country partitions.
 - **Generate within the allowed shape.** Compile the permitted fields before generating values; check every record against that list before delivery.
-- **Keep recipient packages independent.** Fabricated identifiers belong to their package. Proposed relationship handling must keep child records within the same permitted package and country partition.
+- **Keep recipient packages independent.** Fabricated identifiers belong to their package. The relationship contract keeps child records within the same permitted package and country partition.
 
 ### The cases that make the rules meaningful
 
@@ -97,7 +97,7 @@ The original generator account and this expanded public design have different ev
 - [Reference design and its evidence boundary](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/docs/reference-design.md)
 - [Operations](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/operations.json), [Aster finance](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/finance-aster.json), [Boreal finance](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/finance-boreal.json), and [Aster partner](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/partner-aster.json) fixtures
 - [Expected policy decisions](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/expected-decisions.json) and [illustrative export manifest](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/export-manifest.example.json)
-- [Acceptance scenarios for a future implementation](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/docs/acceptance-scenarios.md)
+- [Acceptance scenarios and expected decisions](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/docs/acceptance-scenarios.md)
 
 </details>
 

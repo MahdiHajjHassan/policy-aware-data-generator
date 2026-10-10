@@ -15,10 +15,10 @@ My contribution was the configurable generator work. Here, I explain the workflo
 **Public status: documentation-only showcase.** The original implementation is unavailable; this repository publishes static fabricated fixtures and a reference design, with no runnable public generator. The examples and acceptance expectations are not executed tests or performance evidence.
 
 <picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 540px)" srcset="assets/policy-story-mobile-dark.svg">
-  <source media="(max-width: 540px)" srcset="assets/policy-story-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/policy-story-dark.svg">
-  <img src="assets/policy-story-light.svg" alt="Concept illustration of a fictional development-data workflow: recipient scope and field policies shape different synthetic dataset views for operations, finance, and a partner." width="680">
+  <source media="(prefers-color-scheme: dark) and (max-width: 540px)" srcset="assets/policy-story-v2-mobile-dark.svg">
+  <source media="(max-width: 540px)" srcset="assets/policy-story-v2-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/policy-story-v2-dark.svg">
+  <img src="assets/policy-story-v2-light.svg" alt="Static fictional reference: a recipient-by-field permission matrix gives Operations Aster no pay columns, Finance Aster pay columns, and Finance Boreal no pay columns." width="680">
 </picture>
 
 *Concept illustration of the fictional reference; not an application screenshot.*

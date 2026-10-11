@@ -1,151 +1,89 @@
-# Reference Design
+# PolicyForge | Schemas, Permissions, and Export Design
 
 > [!CAUTION]
-> **Professional experience, protected information.**
-> This public showcase uses independent reference designs and fictional examples, with no Thales implementation or data. It discloses no employer code, systems, configuration, or critical information and carries no official endorsement. Diagrams explain the design; they are illustrations, not application screenshots or execution results. PolicyForge publishes a design and static fixtures; the original generator is unavailable. Expanded delivery controls are design recommendations, not verified features of that implementation. Example policies are not legal requirements.
+> **Confidential work and public design.** This showcase contains no Thales implementation or data and carries no employer endorsement. The original generator is unavailable; this repository contains its public design and static example files, not a runnable generator. The expanded delivery controls are design recommendations. Country rules and records are fictional, and diagrams explain the design.
 
-The design connects input contracts, recipient permissions, synthetic generation, validation, and delivery.
+PolicyForge's design connects a declared schema, the recipient's permissions, synthetic value generation, and export validation. The central rule is to decide the allowed data shape before creating the values.
 
-## Input contracts
+## Dataset contract
 
-A source adapter accepts either an API response or a file and produces a canonical dataset contract. The public example uses an employee schema; the design does not depend on that domain.
+An API or file adapter supplies a common dataset description:
 
-The contract identifies:
+- Name and version.
+- Fields, types, and required values.
+- Primary keys and relationships.
+- Field categories and permitted enumerated values.
+- Generation constraints.
 
-- Dataset name and version.
-- Declared fields, data types, and nullability.
-- Primary keys and any foreign-key relationships.
-- Field classifications.
-- Explicit permitted enum values.
-- Approved generation constraints.
+Input handling bounds payload size, validates types, and rejects malformed contracts. A new unclassified field blocks the affected export until its category and generation rule are reviewed. Field names alone do not establish their classification.
 
-For an implementation, input handling should bound payload size, validate types, reject malformed contracts, and avoid logging raw payloads. Any access credentials belong in runtime configuration and never in recipient exports.
+## Permission rules
 
-Source rows can help establish a schema inside an approved source boundary. They are not output fixtures. The synthetic-generation boundary uses approved metadata and configured constraints instead of copying or lightly changing production values.
+The policy combines four scopes: dataset, team, role, and country.
 
-An undeclared field introduced by a schema change blocks the affected export until its classification and generation rule are reviewed. A field called salary is not classified solely by its name; classification is part of the explicit data contract.
+```text
+allowed categories = dataset ∩ team ∩ role ∩ country
+allowed fields = declared fields in allowed categories minus explicit denials
+```
 
-## Policy model
+Requested countries must be allowed by both the team and role. An unknown scope is rejected. A request containing permitted and forbidden countries is rejected as a whole; the caller must request a narrower scope explicitly.
 
-The reference policy has four scopes:
+After country checks, field selection can produce different country schemas. Aster finance includes financial fields; Boreal finance omits them. A required field that is forbidden makes the export invalid.
 
-1. Dataset scope defines the field categories available for that dataset.
-2. Team scope defines recognized roles, countries, and categories.
-3. Role scope further narrows the permitted countries and categories.
-4. Country scope further narrows the permitted categories.
+## Trusted recipient identity
 
-For each approved country:
+The authenticated identity, team membership, and roles come from trusted access-control records. A request supplies the desired dataset and countries; typing `finance_analyst` into a payload does not grant that role.
 
-~~~text
-permitted categories =
-  dataset categories
-  intersect team categories
-  intersect role categories
-  intersect country categories
+Generation, retries, and downloads check the recipient's current permissions. Country attributes used in policy decisions come from approved dataset metadata.
 
-permitted fields =
-  declared fields in permitted categories
-  minus explicit denied fields
-~~~
+## Generate within the selected schema
 
-The requested countries must be a nonempty subset of both the team's and the role's permitted countries. Unknown scope is a rejection, not an unrestricted default.
+- Generate package-specific identifiers independently of source keys.
+- Use a synthetic vocabulary for names and identity fields.
+- Use approved values for departments and job families.
+- Generate financial values only when permitted, within configured ranges.
+- Preserve declared date ordering and parent-child relationships.
+- Keep separate recipients' identifiers and records independent.
 
-An export requesting a mixture of permitted and forbidden countries is rejected as a whole. The caller must submit an explicitly narrower request; the engine does not silently produce a partial export.
+A fixed development seed makes outputs reproducible for the same schema, policy, and generation configuration.
 
-After country validation, separate country partitions can have different field lists. Aster finance includes financial fields; Boreal finance omits them. Both remain successful authorized requests under this policy.
+## Omit restricted columns
 
-A required field that is prohibited by an explicit denial or category restriction makes the export invalid. The generator must not silently retain the field or release a broken dataset.
+Forbidden fields are absent from both the declared schema and every record. They are not represented by a masked string or an empty value. Country partitions carry their own permitted field lists.
 
-## Trusted recipient context
+Related records stay within the same recipient package and country. A child record cannot reveal an excluded parent through its identifier. An unresolved required relationship rejects the export.
 
-A request contains the desired dataset and countries. The subject's authenticated identity, team membership, and role assignments are resolved through trusted authorization context.
+## Validate before delivery
 
-A user cannot gain finance permissions by submitting finance_analyst in a payload. The request must match an assigned role. Policy checks are applied to every generation and delivery request, including retries and downloads.
-
-The country attribute used for policy evaluation must also come from the approved dataset contract or trusted metadata. Changing a field in a request must not change a person's authorization.
-
-This design follows the authorization principles of explicit defaults and request-level checks described in the [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html).
-
-## Synthetic generation boundary
-
-The permitted output field list is compiled before records are generated.
-
-- Structural identifiers are fabricated, unique within the package, and independent of source keys.
-- Names and other identity fields use fabricated values from an approved synthetic vocabulary.
-- Departments and job families come from approved example enums.
-- Financial fields, when permitted, are fabricated from configured ranges and currency markers.
-- Date generation observes declared ordering constraints.
-- Parent-child records use the same synthetic mapping within one recipient package.
-- Separate recipients get independently generated identifiers and records.
-
-Generation constraints define the names, currency markers, and financial ranges used by the dataset.
-
-A development seed makes fixture output reproducible for a fixed contract, policy, and generation configuration. It must not include original identifiers, sensitive values, or secrets. Reproducibility does not itself establish anonymity.
-
-## Field omission and country partitions
-
-Restricted columns are absent from a recipient's schema and records. They are not released as hashes, masked strings, or empty values.
-
-When a country rule suppresses financial fields, finance output for that country uses a separate schema. The output manifest records the resulting field list.
-
-The engine must inspect both the declared field list and every output record. A financial property appearing in a record outside the compiled field list rejects the export.
-
-An approved synthetic structural identifier can be available to a partner without exposing identity fields. Its value does not encode a source identifier, a name, or a real employee relationship.
-
-## Relationships and dependencies
-
-For related datasets such as employees and assignments:
-
-- Every generated assignment references an included synthetic employee.
-- References are scoped to the same recipient package and country partition.
-- An excluded parent cannot remain discoverable through a child record.
-- If a required relationship cannot be represented within the permitted scope, the export is rejected or an explicitly documented alternative contract is required.
-
-The relationship contract extends the employee dataset to related tables while preserving each recipient's scope.
-
-## Export validation
-
-Before publication, an implementation should verify:
-
-1. Every requested country is recognized and permitted.
-2. Each generated country's field list matches the compiled policy.
-3. Record properties exactly match the approved schema.
-4. Required fields are present and data types are valid.
-5. Generated identifiers are unique in their declared scope.
-6. Foreign keys resolve inside the exported package.
-7. Financial fields are absent for operations and partner outputs.
-8. Boreal output has no financial fields for any recipient in this example.
-9. Unknown fields and scopes produce explicit rejections.
-10. Export manifests and logs contain no source values.
-
-These requirements define the export acceptance boundary.
+| Check | Requirement |
+| --- | --- |
+| Countries | Every requested country is recognized and permitted. |
+| Columns | Schema and record properties match the selected field list exactly. |
+| Values | Required fields, types, and configured constraints are valid. |
+| Identifiers | Unique in the declared package scope. |
+| Relationships | References resolve within the same package and partition. |
+| Recipient fields | Financial and identity fields follow the recipient and country rules. |
+| New fields | Classification is reviewed before export. |
 
 ## Failure handling
 
-| Failure | Expected reference behavior |
+| Failure | Design response |
 | --- | --- |
-| Invalid API or file contract | Reject the input; record a non-sensitive error code |
-| Unknown field classification | Block the affected export pending classification |
-| Unknown team, role, dataset, or country | Deny the request |
-| Subject is not assigned the requested role | Deny the request |
-| Requested country is outside recipient scope | Reject the complete request |
-| Policy fails to load or is invalid | Do not generate or release an export |
-| Required output field is forbidden | Reject the export |
-| Output validation fails | Do not deliver the package |
-| Delivery fails | Keep recipient isolation; reauthorize before retry |
+| Invalid input or unknown classification | Reject or block the affected export. |
+| Unknown recipient, country, dataset, or unassigned role | Deny the request. |
+| Missing or invalid policy | Do not generate or release an export. |
+| Required field is forbidden | Reject the export. |
+| Record or relationship validation fails | Do not deliver the package. |
+| Delivery retry | Check permissions again and retain recipient isolation. |
 
-No failure should produce a fallback export containing all fields.
+## Export records and delivery
 
-## Audit and delivery design
+The manifest records dataset and policy versions, recipient team and role, countries, field lists, row counts, and validation status. Delivery uses authenticated recipient checks, isolated storage, retention rules, and authorization on download.
 
-The reference manifest records the policy version, dataset contract version, recipient team and role, countries, output fields, synthetic row counts, and validation status. It does not contain input rows.
+Operational logs record job identifiers, decisions, and error codes. They exclude source row samples and sensitive values.
 
-Audit events can capture a generated job identifier, an opaque authenticated-subject identifier, the policy version, a decision, and an error code. Logging should avoid names, salaries, source row samples, and source identifiers.
+## Other dataset domains
 
-The distribution boundary requires authenticated delivery, recipient checks, isolated export storage, appropriate retention, and authorization on download. Removing fields does not replace those controls.
+A product dataset can use the same rules with categories such as descriptions, stock information, and cost. Each domain supplies its own schema and classifications.
 
-## Domain extension
-
-A non-HR dataset follows the same policy model with its own explicit classifications. For example, a product dataset might distinguish structural identifiers, product descriptions, stock information, and cost fields.
-
-Each domain supplies its own schema and classifications while retaining the same recipient-policy model.
+[Project overview](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/README.md) · [Validation scenarios](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/docs/acceptance-scenarios.md)

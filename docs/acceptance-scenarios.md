@@ -1,10 +1,11 @@
-# Acceptance Scenarios
+# PolicyForge | Validation Scenarios
 
 > [!CAUTION]
-> **Professional experience, protected information.**
-> This public showcase uses independent reference designs and fictional examples, with no Thales implementation or data. It discloses no employer code, systems, configuration, or critical information and carries no official endorsement. Diagrams explain the design; they are illustrations, not application screenshots or execution results. PolicyForge publishes a design and static fixtures; the original generator is unavailable. Expanded delivery controls are design recommendations, not verified features of that implementation. Example policies are not legal requirements.
+> **Confidential work and public design.** This showcase contains no Thales implementation or data and carries no employer endorsement. The original generator is unavailable; this repository contains its public design and static example files, not a runnable generator. The expanded delivery controls are design recommendations. Country rules and records are fictional, and diagrams explain the design.
 
-The acceptance matrix covers permitted views, explicit refusals, schema changes, and delivery boundaries.
+The policy matrix defines permitted datasets, refused requests, and the cases that block export. The country and recipient examples use the rules in [policies.example.json](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/policies.example.json).
+
+## Expected decisions
 
 | Scenario | Expected result |
 | --- | --- |
@@ -28,16 +29,16 @@ The acceptance matrix covers permitted views, explicit refusals, schema changes,
 | Country-specific outputs have different allowed schemas | Create separate country partitions with explicit field lists |
 | Delivery is retried after permissions change | Reauthorize; reject if the recipient is no longer permitted |
 
-## Reading the fixtures
+## Compare the dataset files
 
-The JSON files show the output fields for each recipient and country.
+- [Operations](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/operations.json): structural, identity, and work fields.
+- [Aster finance](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/finance-aster.json): the same categories plus salary, bonus, and currency.
+- [Boreal finance](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/finance-boreal.json): financial fields omitted by the country rule.
+- [Aster partner](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/partner-aster.json): structural and work fields; no display name or financial columns.
+- [Expected decisions](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/examples/expected-decisions.json): approvals and refusals.
 
-- Operations has structural, identity, and work fields.
-- Aster finance additionally has annual_salary, annual_bonus, and currency.
-- Boreal finance has the same categories as operations because financial fields are restricted there.
-- Aster partner has structural and work fields, with display_name absent.
-- Expected decisions show both approvals and denials.
+## What validation covers
 
-## Implementation verification requirements
+Policy decisions, unknown scopes, untrusted role claims, schema changes, restricted-field omission, country partitions, relationship integrity, duplicate identifiers, and permission changes before retries or downloads.
 
-An executable reconstruction should test the policy matrix, schema changes, untrusted recipient context, invalid inputs, field omission, country restrictions, record relationships, output validation failures, retries, and delivery isolation.
+[Project overview](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/README.md) · [Export design](https://github.com/MahdiHajjHassan/policy-aware-data-generator/blob/main/docs/reference-design.md)

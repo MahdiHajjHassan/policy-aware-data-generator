@@ -53,8 +53,8 @@ Requested countries are checked first. Field rules then shape each country's out
 - Check permissions again when an export is retried or downloaded.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MahdiHajjHassan/policy-aware-data-generator/main/assets/recipient-data-dark.svg">
-  <img src="https://raw.githubusercontent.com/MahdiHajjHassan/policy-aware-data-generator/main/assets/recipient-data-light.svg" alt="Recipient delivery: an approved schema and recipient rules determine permitted fields, reject unauthorized scope, and describe validation before delivery." width="500">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/recipient-data-v2-dark.svg">
+  <img src="assets/recipient-data-v2-light.svg" alt="Recipient delivery: an approved schema and recipient rules determine permitted fields, reject unauthorized scope, and describe validation before delivery." width="500">
 </picture>
 
 ### Compare the outputs and rules

@@ -10,10 +10,10 @@ Developers need data to build and check screens, reports, and integrations. An o
 **My contribution:** configurable generation based on the recipient's team, role, country scope, and permitted fields. The goal was to let teams develop against the data shape they were allowed to use.
 
 <picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 540px)" srcset="assets/policy-story-v3-mobile-dark.svg">
-  <source media="(max-width: 540px)" srcset="assets/policy-story-v3-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/policy-story-v3-dark.svg">
-  <img src="assets/policy-story-v3-light.svg" alt="Recipient and country permissions determine the output columns. Operations in Aster omit pay fields, Finance in Aster include them, and Finance in Boreal omit them." width="680">
+  <source media="(prefers-color-scheme: dark) and (max-width: 540px)" srcset="assets/policy-story-v4-mobile-dark.svg">
+  <source media="(max-width: 540px)" srcset="assets/policy-story-v4-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/policy-story-v4-dark.svg">
+  <img src="assets/policy-story-v4-light.svg" alt="An employee schema and recipient rules feed permission-aware field selection. A team, role and country matrix controls pay-field access; exported outputs contain only allowed fields." width="680">
 </picture>
 
 ### Same subject, different fields

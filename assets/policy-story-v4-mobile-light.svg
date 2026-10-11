@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1212" viewBox="0 0 360 1212" role="img" aria-labelledby="policyTitle policyDesc" data-model="permission-matrix-and-output-schemas" data-variant="mobile" data-version="v4">
+<title id="policyTitle">Recipient and country rules shape the permitted dataset</title>
+<desc id="policyDesc">An employee schema and recipient rules feed permission-aware field selection. A team, role and country matrix controls pay-field access; exported outputs contain only allowed fields.</desc>
+<style>text{font-family:Segoe UI,Arial,sans-serif}path,rect,circle,ellipse{shape-rendering:geometricPrecision}</style>
+<rect x="0" y="0" width="360" height="1212" rx="18" fill="#f5f7fa" stroke="none" stroke-width="1.5"/>
+<text x="20" y="54" font-size="29" font-weight="600" fill="#1c2d42" text-anchor="start">Permissions shape</text>
+<text x="20" y="94" font-size="29" font-weight="600" fill="#1c2d42" text-anchor="start">the data.</text>
+<rect x="20" y="123" width="320" height="160" rx="12" fill="#ffffff" stroke="#ccd7e5" stroke-width="1.5"/>
+<text x="38" y="158" font-size="22" font-weight="600" fill="#1c2d42" text-anchor="start">Employee schema</text>
+<path d="M20 174H340" fill="none" stroke="#ccd7e5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="38" y="204" font-size="17" font-weight="600" fill="#72518f" text-anchor="start">Identity</text>
+<text x="157" y="204" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">display_name</text>
+<text x="38" y="232" font-size="17" font-weight="600" fill="#72518f" text-anchor="start">Work</text>
+<text x="157" y="232" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">department</text>
+<text x="38" y="260" font-size="17" font-weight="600" fill="#72518f" text-anchor="start">Pay</text>
+<text x="157" y="260" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">annual_salary</text>
+<path d="M20 307H318L340 329V411H20Z" fill="#ffffff" stroke="#ccd7e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M318 307V329H340" fill="none" stroke="#ccd7e5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="38" y="344" font-size="22" font-weight="600" fill="#1c2d42" text-anchor="start">Team + role + country</text>
+<text x="38" y="380" font-size="17" font-weight="400" fill="#52647b" text-anchor="start">Permissions limit the field list.</text>
+<path d="M20 204H10V496H20" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 491L20 496L14 501" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 359H10" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="20" y="448" width="320" height="96" rx="12" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<text x="38" y="485" font-size="23" font-weight="600" fill="#1c2d42" text-anchor="start">Allowed fields</text>
+<text x="38" y="516" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Intersect permissions</text>
+<path d="M180 544V568" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M175 562L180 568L185 562" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="20" y="596" font-size="22" font-weight="600" fill="#1c2d42" text-anchor="start">Recipient permissions</text>
+<text x="34" y="632" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="start">Recipient</text>
+<text x="220" y="632" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="middle">Work</text>
+<text x="266" y="632" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="middle">ID</text>
+<text x="312" y="632" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="middle">Pay</text>
+<rect x="20" y="650" width="320" height="60" rx="6" fill="#ffffff" stroke="none" stroke-width="1.5"/>
+<text x="34" y="674" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="start">Operations</text>
+<text x="34" y="698" font-size="17" font-weight="400" fill="#52647b" text-anchor="start">Aster</text>
+<circle cx="220" cy="680" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M216 680L219 683L225 676" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="266" cy="680" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M262 680L265 683L271 676" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="312" cy="680" r="10" fill="#ffffff" stroke="#ccd7e5" stroke-width="1.5"/>
+<path d="M308 680H316" fill="none" stroke="#52647b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="20" y="718" width="320" height="60" rx="6" fill="#f0e9f5" stroke="none" stroke-width="1.5"/>
+<text x="34" y="742" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="start">Finance</text>
+<text x="34" y="766" font-size="17" font-weight="400" fill="#52647b" text-anchor="start">Aster</text>
+<circle cx="220" cy="748" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M216 748L219 751L225 744" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="266" cy="748" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M262 748L265 751L271 744" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="312" cy="748" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M308 748L311 751L317 744" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="20" y="786" width="320" height="60" rx="6" fill="#ffffff" stroke="none" stroke-width="1.5"/>
+<text x="34" y="810" font-size="17" font-weight="600" fill="#1c2d42" text-anchor="start">Finance</text>
+<text x="34" y="834" font-size="17" font-weight="400" fill="#52647b" text-anchor="start">Boreal</text>
+<circle cx="220" cy="816" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M216 816L219 819L225 812" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="266" cy="816" r="10" fill="#f0e9f5" stroke="#72518f" stroke-width="1.5"/>
+<path d="M262 816L265 819L271 812" fill="none" stroke="#72518f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="312" cy="816" r="10" fill="#ffffff" stroke="#ccd7e5" stroke-width="1.5"/>
+<path d="M308 816H316" fill="none" stroke="#52647b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="20" y="895" font-size="21" font-weight="600" fill="#1c2d42" text-anchor="start">Operations / Aster output</text>
+<rect x="20" y="916" width="320" height="238" rx="10" fill="#ffffff" stroke="#ccd7e5" stroke-width="1.5"/>
+<rect x="21" y="917" width="318" height="46" rx="9" fill="#f0e9f5" stroke="none" stroke-width="1.5"/>
+<path d="M20 963H340 M162 916V1154" fill="none" stroke="#ccd7e5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="946" font-size="18" font-weight="600" fill="#1c2d42" text-anchor="start">Field</text>
+<text x="178" y="946" font-size="18" font-weight="600" fill="#1c2d42" text-anchor="start">Value</text>
+<text x="34" y="993" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">ID</text>
+<text x="178" y="993" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">ops-0001</text>
+<path d="M20 1005H340" fill="none" stroke="#ccd7e5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="1029" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Country</text>
+<text x="178" y="1029" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Aster</text>
+<path d="M20 1041H340" fill="none" stroke="#ccd7e5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="1065" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Name</text>
+<text x="178" y="1065" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Alex Example</text>
+<path d="M20 1077H340" fill="none" stroke="#ccd7e5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="1101" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Department</text>
+<text x="178" y="1101" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Operations</text>
+<path d="M20 1113H340" fill="none" stroke="#ccd7e5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="1137" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Job family</text>
+<text x="178" y="1137" font-size="17" font-weight="400" fill="#1c2d42" text-anchor="start">Analyst</text>
+<text x="20" y="1190" font-size="18" font-weight="600" fill="#72518f" text-anchor="start">Pay columns are absent.</text>
+</svg>

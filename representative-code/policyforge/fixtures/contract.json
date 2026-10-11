@@ -1,0 +1,16 @@
+{
+  "name": "Workforce development dataset",
+  "description": "Relational employee and project-assignment records for development and access review.",
+  "version": "1.0",
+  "dataset": "workforce_reference",
+  "tables": [
+    "employees",
+    "assignments"
+  ],
+  "countries": [
+    "Aster",
+    "Boreal"
+  ],
+  "rows": 12,
+  "seed": "studio-2026"
+}

@@ -1,0 +1,199 @@
+{
+  "version": "local-product-1.0",
+  "categories": [
+    "structural",
+    "identity",
+    "work",
+    "financial"
+  ],
+  "subjects": {
+    "finance-demo": {
+      "id": "finance-demo",
+      "label": "Finance analyst",
+      "team": "finance",
+      "roles": [
+        "finance_analyst"
+      ],
+      "description": "Compare financial access across Aster and Boreal."
+    },
+    "operations-demo": {
+      "id": "operations-demo",
+      "label": "Operations analyst",
+      "team": "operations",
+      "roles": [
+        "operations_analyst"
+      ],
+      "description": "Use identity and work fields without pay columns."
+    },
+    "partner-demo": {
+      "id": "partner-demo",
+      "label": "Partner developer",
+      "team": "partner",
+      "roles": [
+        "partner_developer"
+      ],
+      "description": "Receive an Aster work view without names or pay."
+    }
+  },
+  "teams": {
+    "finance": {
+      "categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ],
+      "countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "roles": [
+        "finance_analyst"
+      ],
+      "deny": [],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    },
+    "operations": {
+      "categories": [
+        "structural",
+        "identity",
+        "work"
+      ],
+      "countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "roles": [
+        "operations_analyst"
+      ],
+      "deny": [
+        "annual_salary",
+        "annual_bonus",
+        "currency"
+      ],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    },
+    "partner": {
+      "categories": [
+        "structural",
+        "work"
+      ],
+      "countries": [
+        "Aster"
+      ],
+      "roles": [
+        "partner_developer"
+      ],
+      "deny": [
+        "display_name",
+        "annual_salary",
+        "annual_bonus",
+        "currency"
+      ],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    }
+  },
+  "roles": {
+    "finance_analyst": {
+      "categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ],
+      "countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "deny": [],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    },
+    "operations_analyst": {
+      "categories": [
+        "structural",
+        "identity",
+        "work"
+      ],
+      "countries": [
+        "Aster",
+        "Boreal"
+      ],
+      "deny": [],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    },
+    "partner_developer": {
+      "categories": [
+        "structural",
+        "work"
+      ],
+      "countries": [
+        "Aster"
+      ],
+      "deny": [],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    }
+  },
+  "countries": {
+    "Aster": {
+      "categories": [
+        "structural",
+        "identity",
+        "work",
+        "financial"
+      ],
+      "deny": [],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    },
+    "Boreal": {
+      "categories": [
+        "structural",
+        "identity",
+        "work"
+      ],
+      "deny": [
+        "annual_salary",
+        "annual_bonus",
+        "currency"
+      ],
+      "tables": [
+        "employees",
+        "assignments"
+      ]
+    }
+  },
+  "dataset": {
+    "id": "workforce_reference",
+    "categories": [
+      "structural",
+      "identity",
+      "work",
+      "financial"
+    ],
+    "deny": [],
+    "tables": [
+      "employees",
+      "assignments"
+    ]
+  }
+}

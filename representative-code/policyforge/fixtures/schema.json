@@ -1,0 +1,125 @@
+{
+  "employees": {
+    "employee_id": {
+      "type": "string",
+      "category": "structural",
+      "required": true,
+      "generator": "employee_id"
+    },
+    "country": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "country"
+    },
+    "display_name": {
+      "type": "string",
+      "category": "identity",
+      "required": false,
+      "generator": "name"
+    },
+    "department": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "choice",
+      "choices": [
+        "Operations",
+        "Engineering",
+        "Finance"
+      ]
+    },
+    "job_family": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "choice",
+      "choices": [
+        "Analyst",
+        "Engineer",
+        "Coordinator"
+      ]
+    },
+    "annual_salary": {
+      "type": "number",
+      "category": "financial",
+      "required": false,
+      "generator": "number",
+      "minimum": 30000,
+      "maximum": 90000,
+      "step": 1000
+    },
+    "annual_bonus": {
+      "type": "number",
+      "category": "financial",
+      "required": false,
+      "generator": "number",
+      "minimum": 0,
+      "maximum": 9000,
+      "step": 500
+    },
+    "currency": {
+      "type": "string",
+      "category": "financial",
+      "required": false,
+      "generator": "choice",
+      "choices": [
+        "DEM"
+      ]
+    }
+  },
+  "assignments": {
+    "assignment_id": {
+      "type": "string",
+      "category": "structural",
+      "required": true,
+      "generator": "assignment_id"
+    },
+    "employee_id": {
+      "type": "string",
+      "category": "structural",
+      "required": true,
+      "generator": "employee_id"
+    },
+    "country": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "country"
+    },
+    "project": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "choice",
+      "choices": [
+        "Atlas Demo",
+        "Harbor Demo",
+        "Orchard Demo"
+      ]
+    },
+    "allocation_percent": {
+      "type": "number",
+      "category": "work",
+      "required": true,
+      "generator": "choice",
+      "choices": [
+        50,
+        75,
+        100
+      ]
+    },
+    "start_date": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "start_date"
+    },
+    "end_date": {
+      "type": "string",
+      "category": "work",
+      "required": true,
+      "generator": "end_date"
+    }
+  }
+}
